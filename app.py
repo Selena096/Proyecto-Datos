@@ -18,24 +18,24 @@ st.title("Tablero de Analisis de Ventas de Regalos")
 
 with st.container():
  # Dividir pantalla en dos columnas
- col1, col2, col3 = st.columns(3)
- with col1:
+  col1, col2, col3 = st.columns(3)
+  with col1:
     st.metric("Total de Ventas (unidades)", ventas_totales)
- with col2:
+  with col2:
     st.write("### Ventas por Producto")
     st.bar_chart(ventas_por_producto)
- with col3:
-  st.write("### Ventas por Temporada")
-  fig, ax = plt.subplots()
-  ax.pie(
+  with col3:
+   st.write("### Ventas por Temporada")
+   fig, ax = plt.subplots()
+   ax.pie(
     ventas_por_temporada, 
     labels=ventas_por_temporada.index, 
     autopct="%1.1f%%", 
     startangle=90, 
     colors=plt.cm.Set3.colors
-  )
-  ax.set_title("Distribución de Ventas por Temporada")
-  st.pyplot(fig)
+   )
+   ax.set_title("Distribución de Ventas por Temporada")
+   st.pyplot(fig)
 with st.container():
     col4, col5, col6 = st.columns(3)
     with col4:
